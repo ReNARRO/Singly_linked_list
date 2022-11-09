@@ -66,6 +66,28 @@ namespace Singly_linked_list
             nodeBaru.next = current;
             previous.next = nodeBaru;
         }
+
+        public bool delNode(int nim)/*Method untuk menghapus node tertentu didalam list*/
+        {
+            Node previous, current;
+            previous = current = null;
+            /*Check apakah node yang dimaksud ada didalam list atau tidak*/
+            if(Search(nim, ref previous, ref current) == false)
+                return false;
+            previous.next = current.next;
+            if(current == START)
+                START = START.next;
+            return true;
+        }
+
+        
+    }
+    class program
+    {
+        static void Main(string[] args)
+        {
+
+        }
     }
     
 }
